@@ -28,7 +28,7 @@ export function EmptyScreen({ setInput }: Pick<UseChatHelpers, 'setInput'>) {
         </h1>
         <p className="mb-2 leading-normal text-muted-foreground">
           This is an demo AI chatbot built for Lava Hot Yoga Singapore by{' '}
-          <ExternalLink href="https://nextjs.org">BlackOrchid</ExternalLink>
+          <ExternalLink href="https://blackorchid-2.framer.ai/">BlackOrchid AI</ExternalLink>
           .
         </p>
         <p className="leading-normal text-muted-foreground">
