@@ -68,10 +68,10 @@ export async function Header() {
         </div>
       </div> */}
       <div className="flex items-center justify-end space-x-2">
-        <Button onClick={() => uploadPDF()}>
+        {/* <Button onClick={() => uploadPDF()}>
           <IconGitHub />
           <span className="hidden ml-2 md:flex">Upload PDF</span>
-        </Button>
+        </Button> */}
         <a
           target="_blank"
           href="https://tailwind-nextjs-starter-blog-eight-gamma.vercel.app/"
@@ -79,7 +79,7 @@ export async function Header() {
           className={cn(buttonVariants({ variant: 'outline' }))}
         >
           <IconGitHub />
-          <span className="hidden ml-2 md:flex">Blog Posts</span>
+          <span className="hidden ml-2 md:flex">Use Cases</span>
         </a>
         <a
           href="https://blackorchid-2.framer.ai/"
@@ -87,8 +87,8 @@ export async function Header() {
           className={cn(buttonVariants())}
         >
           <IconVercel className="mr-2" />
-          <span className="hidden sm:block">BlackOrchid AI</span>
-          <span className="sm:hidden">BlackOrchid</span>
+          <span className="hidden sm:block">About BlackOrchid</span>
+          <span className="sm:hidden">About BlackOrchid</span>
         </a>
       </div>
     </header>

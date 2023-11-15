@@ -5,15 +5,18 @@ import { ExternalLink } from '@/components/external-link'
 
 export function FooterText({ className, ...props }: React.ComponentProps<'p'>) {
   return (
-    <p
-      className={cn(
-        'px-2 text-center text-xs leading-normal text-muted-foreground',
-        className
-      )}
-      {...props}
-    >
-      Demo AI chatbot built by{' '}
-      <ExternalLink href="https://blackorchid-2.framer.ai/">BlackOrchid AI</ExternalLink>.
-    </p>
+    // <div className='flex flex-col gap-2'>
+     
+      <p
+        className={cn(
+          'px-2 text-center text-xs leading-normal text-muted-foreground',
+          className
+        )}
+        {...props}
+      >
+        {/* Learn where this can be used{" "} */}
+        <ExternalLink href="https://blackorchid-2.framer.ai/">Learn where this can be used</ExternalLink>
+      </p>
+    // </div>
   )
 }

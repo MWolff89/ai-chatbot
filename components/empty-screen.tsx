@@ -14,8 +14,8 @@ const exampleMessages = [
     message: 'What is the pricing for Lava Hot Yoga classes?'
   },
   {
-    heading: 'Draft an email',
-    message: `Draft an email to my boss about the following: \n`
+    heading: 'Do you have a free trial?',
+    message: `Do you have a free trial?`
   }
 ]
 
