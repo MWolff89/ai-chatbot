@@ -58,7 +58,7 @@ export async function Header() {
       <div className="flex items-center justify-end space-x-2">
         <a
           target="_blank"
-          href="https://blackorchid-2.framer.ai/"
+          href="https://tailwind-nextjs-starter-blog-eight-gamma.vercel.app/"
           rel="noopener noreferrer"
           className={cn(buttonVariants({ variant: 'outline' }))}
         >

@@ -6,8 +6,8 @@ import { twMerge } from 'tailwind-merge'
 import { OpenAI } from 'langchain/llms/openai'
 import { OpenAIEmbeddings } from 'langchain/embeddings/openai'
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter'
-import { loadQAStuffChain } from 'langchain/chains'
-import { Document } from 'langchain/document'
+// import { loadQAStuffChain } from 'langchain/chains'
+// import { Document } from 'langchain/document'
 
 
 
@@ -51,7 +51,7 @@ export function formatDate(input: string | number | Date): string {
   })
 }
 
-export const updatePinecone = async (client:any, indexName:string, docs:any[]) => {
+export const updatePinecone = async (client: any, indexName: string, docs: any[]) => {
   console.log('Retrieving Pinecone index...');
   // 1. Retrieve Pinecone index
   const index = client.Index(indexName);
@@ -75,7 +75,7 @@ export const updatePinecone = async (client:any, indexName:string, docs:any[]) =
     );
     // 6. Create OpenAI embeddings for documents
     const embeddingsArrays = await new OpenAIEmbeddings().embedDocuments(
-      chunks.map((chunk:any) => chunk.pageContent.replace(/\n/g, " "))
+      chunks.map((chunk: any) => chunk.pageContent.replace(/\n/g, " "))
     );
     console.log('Finished embedding documents');
     console.log(
@@ -83,7 +83,7 @@ export const updatePinecone = async (client:any, indexName:string, docs:any[]) =
     );
     // 7. Create and upsert vectors in batches of 100
     const batchSize = 100;
-    let batch:any = [];
+    let batch: any = [];
     for (let idx = 0; idx < chunks.length; idx++) {
       const chunk = chunks[idx];
       const vector = {
@@ -113,10 +113,10 @@ export const updatePinecone = async (client:any, indexName:string, docs:any[]) =
   }
 };
 
-export const queryPineconeVectorStoreAndQueryLLM = async (
-  client:any,
-  indexName:string,
-  question:string
+export const queryPineconeVectorStore = async (
+  client: any,
+  indexName: string,
+  question: string
 ) => {
   // 1. Start query process
   console.log('Querying Pinecone vector store...');
@@ -138,23 +138,32 @@ export const queryPineconeVectorStoreAndQueryLLM = async (
   // 6. Log the question being asked
   console.log(`Asking question: ${question}...`);
   if (queryResponse.matches.length) {
-    // 7. Create an OpenAI instance and load the QAStuffChain
-    const llm = new OpenAI({});
-    const chain = loadQAStuffChain(llm);
-    // 8. Extract and concatenate page content from matched documents
+    // 7. Extract and concatenate page content from matched documents
     const concatenatedPageContent = queryResponse.matches
-      .map((match:any) => match.metadata.pageContent)
+      .map((match: any) => match.metadata.pageContent)
       .join(" ");
-    // 9. Execute the chain with input documents and question
-    const result = await chain.call({
-      input_documents: [new Document({ pageContent: concatenatedPageContent })],
-      question: question,
-    });
-    // 10. Log the answer
-    console.log(`Answer: ${result.text}`);
-    return result.text
+
+    console.log('Concatenated Page Content =>\n\n' + concatenatedPageContent)
+
+    return concatenatedPageContent
+    // // 7. Create an OpenAI instance and load the QAStuffChain
+    // const llm = new OpenAI({});
+    // const chain = loadQAStuffChain(llm);
+    // // 8. Extract and concatenate page content from matched documents
+    // const concatenatedPageContent = queryResponse.matches
+    //   .map((match:any) => match.metadata.pageContent)
+    //   .join(" ");
+    // // 9. Execute the chain with input documents and question
+    // const result = await chain.call({
+    //   input_documents: [new Document({ pageContent: concatenatedPageContent })],
+    //   question: question,
+    // });
+    // // 10. Log the answer
+    // console.log(`Answer: ${result.text}`);
+    // return result.text
   } else {
     // 11. Log that there are no matches, so GPT-3 will not be queried
     console.log('Since there are no matches, GPT-3 will not be queried.');
+    return ''
   }
 };

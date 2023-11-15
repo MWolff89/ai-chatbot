@@ -4,6 +4,7 @@ import { Configuration, OpenAIApi } from 'openai-edge'
 
 import { auth } from '@/auth'
 import { nanoid } from '@/lib/utils'
+import { getContext } from '@/lib/getContext'
 
 export const runtime = 'edge'
 
@@ -19,6 +20,8 @@ export async function POST(req: Request) {
 
   const lastMessage = messages[messages.length - 1]
 
+  console.log(`Last Message =>`, lastMessage)
+
   // const userId = (await auth())?.user.id
 
   // if (!userId) {
@@ -30,6 +33,10 @@ export async function POST(req: Request) {
   if (previewToken) {
     configuration.apiKey = previewToken
   }
+
+  const _context = await getContext(lastMessage.content)
+
+  console.log('__CONTEXT__ =>', _context)
 
   const context = `
 
