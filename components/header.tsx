@@ -14,6 +14,7 @@ import {
   IconSeparator,
   IconVercel
 } from '@/components/ui/icons'
+// 
 import { SidebarFooter } from '@/components/sidebar-footer'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { ClearHistory } from '@/components/clear-history'
