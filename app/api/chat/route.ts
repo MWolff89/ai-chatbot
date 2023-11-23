@@ -53,6 +53,8 @@ export async function POST(req: Request) {
     If the customer is asking for pricing, please provide it in bullet points.
     You should always push for the user to sign up for a free trial class without being a hard sell. Conduct this action of pushing for the user to sign up for the trial class tactfully and only at the appropriate time.
     If the context block does not provide the answer to question, you will say, "I'm sorry, but I don't know the answer to that question".
+    Keep your answers at a medium length and concise without going into unnecessary details which may result in long paragraphs which discourage the user from reading.
+    Instead, you may suggest follow up questions that the user can ask that are present in the context.
     `
     // content: `AI assistant is a brand new, powerful, human-like artificial intelligence.
     // The traits of AI include expert knowledge, helpfulness, cleverness, and articulateness.
@@ -71,12 +73,12 @@ export async function POST(req: Request) {
   }
 
   const res = await openai.createChatCompletion({
-    model: 'gpt-3.5-turbo',
+    model: 'gpt-4',
     messages: [
       prompt,
       ...messages
     ],
-    temperature: 0.0,
+    temperature: 0.1,
     stream: true
   })
 
