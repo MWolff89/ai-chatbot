@@ -5,18 +5,27 @@ import { ExternalLink } from '@/components/external-link'
 import { IconArrowRight } from '@/components/ui/icons'
 
 const exampleMessages = [
+  // {
+  //   heading: 'List the benefits of hot yoga',
+  //   message: `What are the benefits of hot yoga?`
+  // },
   {
-    heading: 'List the benefits of hot yoga',
-    message: `What are the benefits of hot yoga?`
+    heading: 'What are your services?',
+    message: `What are your services?`
+  },
+  {
+    heading: 'What classes do you have?',
+    message: `What classes are available?`
   },
   {
     heading: 'What is the pricing?',
-    message: 'What is the pricing for Lava Hot Yoga classes?'
+    message: 'What is the pricing for Yoga Mala classes?'
   },
   {
     heading: 'Do you have a free trial?',
     message: `Do you have a free trial?`
-  }
+  },
+  
 ]
 
 export function EmptyScreen({ setInput }: Pick<UseChatHelpers, 'setInput'>) {
@@ -24,10 +33,10 @@ export function EmptyScreen({ setInput }: Pick<UseChatHelpers, 'setInput'>) {
     <div className="mx-auto max-w-2xl px-4">
       <div className="rounded-lg border bg-background p-8">
         <h1 className="mb-2 text-lg font-semibold">
-          Welcome to Lava Hot Yoga Chatbot!
+          Welcome to Yoga Mala Chatbot!
         </h1>
         <p className="mb-2 leading-normal text-muted-foreground">
-          This is an demo AI chatbot built for Lava Hot Yoga Singapore by{' '}
+          This is an demo AI chatbot built for Yoga Mala Singapore by{' '}
           <ExternalLink href="https://blackorchid-2.framer.ai/">BlackOrchid AI</ExternalLink>
           .
         </p>
