@@ -18,6 +18,8 @@ export async function POST(req: Request) {
   const json = await req.json()
   const { messages, previewToken } = json
 
+  console.log(`Messages =>`, messages)
+
   const lastMessage = messages[messages.length - 1]
 
   console.log(`Last Message =>`, lastMessage)
@@ -45,9 +47,12 @@ export async function POST(req: Request) {
     ${_context}
     END OF CONTEXT BLOCK
     You will take into account any CONTEXT BLOCK that is provided in a conversation.
-    If the context does not provide the answer to question, you will say, "I'm sorry, but I don't know the answer to that question".
-    You will not apologize for previous responses, but instead will indicated new information was gained.
+    If the context block does not provide the answer to question, you will say, "I'm sorry, but I don't know the answer to that question".
+    You will not apologize for previous responses, but instead will indicate new information was gained.
     You will not invent anything that is not drawn directly from the context.
+    If the customer is asking for pricing, please provide it in bullet points.
+    You should always push for the user to sign up for a free trial class without being a hard sell. Conduct this action of pushing for the user to sign up for the trial class tactfully and only at the appropriate time.
+    If the context block does not provide the answer to question, you will say, "I'm sorry, but I don't know the answer to that question".
     `
     // content: `AI assistant is a brand new, powerful, human-like artificial intelligence.
     // The traits of AI include expert knowledge, helpfulness, cleverness, and articulateness.
@@ -71,10 +76,12 @@ export async function POST(req: Request) {
       prompt,
       ...messages
     ],
-    temperature: 0.1,
+    temperature: 0.0,
     stream: true
   })
 
+
+  // Construct OpenAI Stream
   const stream = OpenAIStream(res, {
     async onCompletion(completion) {
       const title = json.messages[0].content.substring(0, 100)

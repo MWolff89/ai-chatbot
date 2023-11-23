@@ -8,6 +8,8 @@ import { Chat } from '@/components/chat'
 export const runtime = 'edge'
 export const preferredRegion = 'home'
 
+// export const regionSecondary = 'ap-southeast-1'
+
 export interface ChatPageProps {
   params: {
     id: string

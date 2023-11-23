@@ -22,7 +22,7 @@ export async function POST() {
   })
 
   try {
-    await updatePinecone(client, "lava-hot-yoga", docs)
+    await updatePinecone(client, "yoga-mala", docs)
   } catch (err) {
     console.log('error: ', err)
   }

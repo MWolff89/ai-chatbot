@@ -8,7 +8,7 @@ export async function getContext(query: string) {
         environment: process.env.PINECONE_ENVIRONMENT || ''
     })
 
-    const text = await queryPineconeVectorStore(client, "lava-hot-yoga", query)
+    const text = await queryPineconeVectorStore(client, "yoga-mala", query)
 
     return text
 }
