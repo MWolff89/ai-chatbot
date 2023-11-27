@@ -37,7 +37,7 @@ export function EmptyScreen({ setInput }: Pick<UseChatHelpers, 'setInput'>) {
         </h1>
         <p className="mb-2 leading-normal text-muted-foreground">
           This is an demo AI chatbot built for Yoga Mala Singapore by{' '}
-          <ExternalLink href="https://blackorchid-2.framer.ai/">BlackOrchid AI</ExternalLink>
+          <ExternalLink href="https://tailwind-nextjs-starter-blog-eight-gamma.vercel.app/about/">BlackOrchid AI</ExternalLink>
           .
         </p>
         <p className="leading-normal text-muted-foreground">

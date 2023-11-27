@@ -68,11 +68,14 @@ export async function Header() {
           )}
         </div>
       </div> */}
+      <div className='flex items-center '>
+
+      </div>
       <div className="flex items-center justify-end space-x-2">
-        {/* <Button onClick={() => uploadPDF()}>
+        <Button onClick={() => uploadPDF()}>
           <IconGitHub />
           <span className="hidden ml-2 md:flex">Upload PDF</span>
-        </Button> */}
+        </Button>
         <a
           target="_blank"
           href="https://tailwind-nextjs-starter-blog-eight-gamma.vercel.app/"
@@ -83,7 +86,7 @@ export async function Header() {
           <span className="hidden ml-2 md:flex">Use Cases</span>
         </a>
         <a
-          href="https://blackorchid-2.framer.ai/"
+          href="https://tailwind-nextjs-starter-blog-eight-gamma.vercel.app/about/"
           target="_blank"
           className={cn(buttonVariants())}
         >
