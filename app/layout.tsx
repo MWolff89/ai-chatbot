@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/react';
 
 import { Toaster } from 'react-hot-toast'
 
@@ -50,6 +51,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
           </div>
           <TailwindIndicator />
         </Providers>
+        <Analytics />
+
       </body>
     </html>
   )
