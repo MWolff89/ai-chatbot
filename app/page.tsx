@@ -7,7 +7,6 @@ export default function IndexPage() {
   const id = nanoid()
 
   return <div>
-    {/* <div>Hi test</div> */}
     <Chat id={id} />
-    </div>
+  </div>
 }
