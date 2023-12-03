@@ -12,8 +12,8 @@ import { Header } from '@/components/header'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Yoga Mala Demo AI Chatbot',
-    template: `%s - Yoga Mala Demo AI Chatbot`
+    default: 'Nam Kee Pau Demo AI Chatbot',
+    template: `%s - Nam Kee Pau Demo AI Chatbot`
   },
   description: 'An AI-powered chatbot template built by BlackOrchid AI.',
   themeColor: [
