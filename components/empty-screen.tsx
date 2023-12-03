@@ -10,22 +10,21 @@ const exampleMessages = [
   //   message: `What are the benefits of hot yoga?`
   // },
   {
-    heading: 'What are your services?',
-    message: `What are your services?`
+    heading: 'What bundles do you have?',
+    message: `What bundles do you have?`
   },
   {
-    heading: 'What classes do you have?',
-    message: `What classes are available?`
+    heading: 'Tell me more about the prosperity set',
+    message: `Tell me more about the prosperity set`
   },
   {
-    heading: 'What is the pricing?',
-    message: 'What is the pricing for Yoga Mala classes?'
+    heading: 'How early in advance can I order?',
+    message: 'How early in advance can I order?'
   },
   {
-    heading: 'Do you have a free trial?',
-    message: `Do you have a free trial?`
-  },
-  
+    heading: 'Where can I find you?',
+    message: 'Where can I find you?'
+  }
 ]
 
 export function EmptyScreen({ setInput }: Pick<UseChatHelpers, 'setInput'>) {
@@ -33,11 +32,13 @@ export function EmptyScreen({ setInput }: Pick<UseChatHelpers, 'setInput'>) {
     <div className="mx-auto max-w-2xl px-4">
       <div className="rounded-lg border bg-background p-8">
         <h1 className="mb-2 text-lg font-semibold">
-          Welcome to Yoga Mala Chatbot!
+          Welcome to Nam Kee Pau Chatbot!
         </h1>
         <p className="mb-2 leading-normal text-muted-foreground">
-          This is an demo AI chatbot built for Yoga Mala Singapore by{' '}
-          <ExternalLink href="https://tailwind-nextjs-starter-blog-eight-gamma.vercel.app/about/">BlackOrchid AI</ExternalLink>
+          This is an demo AI chatbot built for Nam Kee Pau by{' '}
+          <ExternalLink href="https://tailwind-nextjs-starter-blog-eight-gamma.vercel.app/about/">
+            BlackOrchid AI
+          </ExternalLink>
           .
         </p>
         <p className="leading-normal text-muted-foreground">

@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
     environment: process.env.PINECONE_ENVIRONMENT || ''
   })
 
-  const text = await queryPineconeVectorStore(client, "yoga-mala", body)
+  const text = await queryPineconeVectorStore(client, "namkeepau", body)
 
   return NextResponse.json({
     data: text
